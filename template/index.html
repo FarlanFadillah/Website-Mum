@@ -17,7 +17,7 @@
 
     <!-- <i><a class="fa fa-bars burger" href=""></a></i> -->
 
-    <div> <a id="logo-1" href="">Logo</a></div>
+    <div> <a id="logo-1" href="">Waroenk Fadillah</a></div>
     <ul>
       <li><a href="#">HOME</a></li>
       <li><a href="#">CONTACT</a></li>
@@ -25,69 +25,30 @@
     </ul>
   </nav>
 
-  <div class="content">
-    <div class="content-1">
-      <div class="cards-bagian-1">
+  <div class="slider-container">
+    <div class="slider">
+      {% for x in nav %}
+      <div class="slide">
         <a href="">
-          <img src="{% static 'gambar 1.png' %}" alt="Gambar card">
-          <h2 style="display: flex; justify-content: center; align-items: center; text-decoration: none;">FOOD</h2>
+          {% if x.food_price < 10000 %}
+          <img src="{{MEDIA_URL}}{{x.food_image}}" height="200">
+          <p>Harga: Rp.{{x.food_price}}/pcs</p>
+          {% else %}
+          <img src="{{MEDIA_URL}}{{x.food_image}}" height="200">
+          <p>Harga: Rp.{{x.food_price}}</p>
+          {% endif %}
         </a>
       </div>
-      <div class="cards-bagian-1">
-        <a href="">
-          <img src="{% static 'gambar 1.png' %}" alt="Gambar card">
-          <h2 style="display: flex; justify-content: center; align-items: center; text-decoration: none;">FOOD</h2>
-        </a>
-      </div>
-      <div class="cards-bagian-1">
-        <a href="">
-          <img src="{% static 'gambar 1.png' %}" alt="Gambar card">
-          <h2 style="display: flex; justify-content: center; align-items: center; text-decoration: none;">FOOD</h2>
-        </a>
-      </div>
-      <div class="cards-bagian-1">
-        <a href="">
-          <img src="{% static 'gambar 1.png' %}" alt="Gambar card">
-          <h2 style="display: flex; justify-content: center; align-items: center; text-decoration: none;">FOOD</h2>
-        </a>
-      </div>
+      {% endfor%}
     </div>
-
-    <div class="content-2">
-      <div class="cards-bagian-1">
-        <a href="">
-          <img src="{% static 'gambar 1.png' %}" alt="Gambar card">
-          <h2 style="display: flex; justify-content: center; align-items: center; text-decoration: none;">FOOD</h2>
-        </a>
-      </div>
-      <div class="cards-bagian-1">
-        <a href="">
-          <img src="{% static 'gambar 1.png' %}" alt="Gambar card">
-          <h2 style="display: flex; justify-content: center; align-items: center; text-decoration: none;">FOOD</h2>
-        </a>
-      </div>
-      <div class="cards-bagian-1">
-        <a href="">
-          <img src="{% static 'gambar 1.png' %}" alt="Gambar card">
-          <h2 style="display: flex; justify-content: center; align-items: center; text-decoration: none;">FOOD</h2>
-        </a>
-      </div>
-      <div class="cards-bagian-1">
-        <a href="">
-          <img src="{% static 'gambar 1.png' %}" alt="Gambar card">
-          <h2 style="display: flex; justify-content: center; align-items: center; text-decoration: none;">FOOD</h2>
-        </a>
-      </div>
-    </div>
+    <div class="arrow left">&lt;</div>
+    <div class="arrow right">&gt;</div>
   </div>
 
   <footer class="footer">
 
-
-
-    
   </footer>
-  <!-- <div class="footer-col">
+  <div class="footer-col" style="color: black;">
     <h3>Tentang Kami</h3>
     <p>
       Kami menjual Pempek yang fresh dan bersih, tidak hanya itu kami menjual macam - macam makanan lainnya,
@@ -109,9 +70,10 @@
       <li class="footer-a"><a class="footer-end" href="#">Twitter</a></li>
       <li class="footer-a"><a class="footer-end" href="#">Instagram</a></li>
     </ul>
-  </div> -->
+  </div>
 
   <script src="{% static 'script.js' %}"></script>
+  <script src="{% static 'home.js' %}"></script>
 </body>
 
 </html>

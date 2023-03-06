@@ -39,12 +39,6 @@ nav ul li a {
     font-size: 2rem;
 }
 
-/* .burger {
-        display: none;
-        position: relative;
-        right: 100px;
-    } */
-
 .content-1 {
     width: auto;
     height: auto;
@@ -101,13 +95,13 @@ nav ul li a {
     display: inline-block;
     padding: 10px;
     background-color: #3498db;
-    color: #fff;
+    color: #0f0d0d;
     border-radius: 5px;
 }
 
 footer {
-    background-color: #333;
-    color: white;
+    background-color: #000000;
+    color: rgb(7, 4, 4);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -148,5 +142,56 @@ footer p {
     .content {
         flex-direction: column;
     }
-    
+
+}
+
+
+/* css baru */
+
+.slider-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.slider {
+    width: 50%; /* ukuran slide */
+    height: 50%; /* ukuran tinggi slide */
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    position: relative;
+    flex: 0 0 100%;
+    height: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+}
+.slide p {
+    font-size: x-large;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.left {
+    left: 10px;
+}
+
+.right {
+    right: 10px;
 }
